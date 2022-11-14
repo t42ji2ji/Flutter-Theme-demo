@@ -117,6 +117,10 @@ class _ThemeControlScreenState extends ConsumerState<ThemeControlScreen> {
                 context: context,
                 builder: (_) {
                   return AlertDialog(
+                    backgroundColor: Theme.of(context)
+                        .colorScheme
+                        .primaryContainer
+                        .withOpacity(0.5),
                     content: SingleChildScrollView(
                       child: ColorPicker(
                         pickerColor: pickerColor,
