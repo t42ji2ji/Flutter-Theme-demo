@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
@@ -17,25 +16,34 @@ class MockScreen extends StatelessWidget {
       width: double.infinity,
       child: FittedBox(
         fit: BoxFit.contain,
-        child: Stack(
+        child: Column(
           children: [
-            Positioned.fill(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 19,
-                  horizontal: 23,
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(40),
-                  child: child,
-                ),
-              ),
+            Text(
+              'KG Theme',
+              style: Theme.of(context).textTheme.headline1,
             ),
-            IgnorePointer(
-              child: SizedBox(
-                  width: 439,
-                  height: 893,
-                  child: SvgPicture.asset('assets/mock/iphone_14_pro.svg')),
+            const SizedBox(height: 8),
+            Stack(
+              children: [
+                Positioned.fill(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 18.5,
+                      horizontal: 23,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(40),
+                      child: child,
+                    ),
+                  ),
+                ),
+                IgnorePointer(
+                  child: SizedBox(
+                      width: 439,
+                      height: 893,
+                      child: SvgPicture.asset('assets/mock/iphone_14_pro.svg')),
+                ),
+              ],
             ),
           ],
         ),

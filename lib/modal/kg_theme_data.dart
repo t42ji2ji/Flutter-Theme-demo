@@ -100,7 +100,7 @@ class KgThemeData with _$KgThemeData {
 
   BoxShadow get boxShadow => BoxShadow(
         color: isDark
-            ? Color.fromARGB(249, 47, 47, 47)
+            ? const Color.fromARGB(249, 47, 47, 47)
             : const Color.fromARGB(255, 186, 186, 186),
         blurRadius: 5,
         offset: const Offset(0, 5),

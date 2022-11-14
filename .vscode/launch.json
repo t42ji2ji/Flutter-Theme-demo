@@ -12,21 +12,12 @@
       "args": ["-d", "chrome"]
     },
     {
-      "name": "wallet_as_service_demo_site",
-      "request": "launch",
-      "type": "dart"
-    },
-    {
-      "name": "wallet_as_service_demo_site (profile mode)",
-      "request": "launch",
+      "name": "Release Flutter for web",
       "type": "dart",
-      "flutterMode": "profile"
-    },
-    {
-      "name": "wallet_as_service_demo_site (release mode)",
       "request": "launch",
-      "type": "dart",
-      "flutterMode": "release"
+      "program": "lib/main.dart",
+      "flutterMode": "release",
+      "args": ["-d", "chrome"]
     }
   ]
 }
