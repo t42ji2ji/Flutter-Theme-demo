@@ -85,8 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Container(
                         alignment: Alignment.center,
                         padding: const EdgeInsets.all(10),
-                        child:
-                            _buildThemeController(ref, context, isbottom: true),
+                        child: _buildThemeController(ref, context),
                       ),
                   ],
                 ),
