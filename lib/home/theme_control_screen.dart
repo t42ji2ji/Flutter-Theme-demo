@@ -112,38 +112,39 @@ class _ThemeControlScreenState extends ConsumerState<ThemeControlScreen> {
               style: Theme.of(context).textTheme.headline5),
         ),
         GestureDetector(
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (_) {
-                  return AlertDialog(
-                    backgroundColor: Theme.of(context)
-                        .colorScheme
-                        .primaryContainer
-                        .withOpacity(0.5),
-                    content: SingleChildScrollView(
-                      child: ColorPicker(
-                        pickerColor: pickerColor,
-                        onColorChanged: changeColor,
-                        labelTypes: const [
-                          ColorLabelType.hex,
-                          ColorLabelType.rgb,
-                        ],
-                      ),
+          onTap: () {
+            showDialog(
+              context: context,
+              builder: (_) {
+                return AlertDialog(
+                  backgroundColor: Theme.of(context)
+                      .colorScheme
+                      .primaryContainer
+                      .withOpacity(0.5),
+                  content: SingleChildScrollView(
+                    child: ColorPicker(
+                      pickerColor: pickerColor,
+                      onColorChanged: changeColor,
+                      labelTypes: const [
+                        ColorLabelType.hex,
+                        ColorLabelType.rgb,
+                      ],
                     ),
-                  );
-                },
-              );
-            },
-            child: Container(
-              width: 30,
-              height: 30,
-              decoration: BoxDecoration(
-                boxShadow: [widget.kgProvider.state.boxShadow],
-                color: pickerColor,
-                borderRadius: BorderRadius.circular(8),
-              ),
-            )),
+                  ),
+                );
+              },
+            );
+          },
+          child: Container(
+            width: 30,
+            height: 30,
+            decoration: BoxDecoration(
+              boxShadow: [widget.kgProvider.state.boxShadow],
+              color: pickerColor,
+              borderRadius: BorderRadius.circular(8),
+            ),
+          ),
+        ),
       ],
     );
   }

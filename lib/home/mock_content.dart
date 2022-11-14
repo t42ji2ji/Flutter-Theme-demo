@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:wallet_as_service_demo_site/kg_theme/kg_theme.dart';
+import 'package:wallet_as_service_demo_site/modal/kg_theme_data.dart';
 
 class MockContent extends StatelessWidget {
   const MockContent({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class MockContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -164,6 +165,26 @@ class MockContent extends StatelessWidget {
                               ),
                             ],
                           ),
+                          Expanded(
+                            child: Align(
+                              alignment: Alignment.centerRight,
+                              child: Container(
+                                padding: KgThemeData().padding,
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context).colorScheme.primary,
+                                  borderRadius: BorderRadius.all(
+                                    ref
+                                        .watch(kgThemeDataStateProvider)
+                                        .borderRadius,
+                                  ),
+                                ),
+                                child: Text(
+                                  'GO',
+                                  style: Theme.of(context).textTheme.headline3,
+                                ),
+                              ),
+                            ),
+                          )
                         ],
                       ),
                     );

@@ -25,8 +25,8 @@ _$_KgThemeData _$$_KgThemeDataFromJson(Map<String, dynamic> json) =>
       tertiaryValue: json['tertiaryValue'] as int? ?? 0xFF5C5C95,
       tertiaryContainerValue:
           json['tertiaryContainerValue'] as int? ?? 0xFFC8DBF8,
-      backgroundValue: json['backgroundValue'] as int? ?? 0xFFFFF8F8,
-      backgroundDarkValue: json['backgroundDarkValue'] as int? ?? 0xFF222222,
+      backgroundValue: json['backgroundValue'] as int? ?? 0xFFFFC64C,
+      backgroundDarkValue: json['backgroundDarkValue'] as int? ?? 0xFF212121,
       textColorValue: json['textColorValue'] as int? ?? 0xFF001F58,
       textColorDarkValue: json['textColorDarkValue'] as int? ?? 0xFFFFFFFF,
     );

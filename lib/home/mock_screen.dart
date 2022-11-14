@@ -60,6 +60,16 @@ class ChangeThemeBtn extends ConsumerStatefulWidget {
 }
 
 class _ChangeThemeBtnState extends ConsumerState<ChangeThemeBtn> {
+  var control = CustomAnimationControl.play; // state variable
+
+  void toggleDirection() {
+    setState(() {
+      control = control == CustomAnimationControl.play
+          ? CustomAnimationControl.playReverse
+          : CustomAnimationControl.play;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -71,6 +81,7 @@ class _ChangeThemeBtnState extends ConsumerState<ChangeThemeBtn> {
             activeColor: Theme.of(context).primaryColor,
             value: ref.watch(kgThemeDataStateProvider).isDark,
             onChanged: (value) {
+              toggleDirection();
               final kgThemeProvider =
                   ref.read(kgThemeDataStateProvider.notifier);
               kgThemeProvider.state = kgThemeProvider.state.copyWith(
@@ -79,7 +90,7 @@ class _ChangeThemeBtnState extends ConsumerState<ChangeThemeBtn> {
             },
           ),
         ),
-        PlayAnimation<double>(
+        CustomAnimation<double>(
           tween: 0.7.tweenTo(1),
           builder: (context, _, value) {
             return Transform.rotate(

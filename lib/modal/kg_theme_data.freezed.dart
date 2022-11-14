@@ -317,8 +317,8 @@ class _$_KgThemeData extends _KgThemeData {
       this.secondaryContainerValue = 0xFFFFD270,
       this.tertiaryValue = 0xFF5C5C95,
       this.tertiaryContainerValue = 0xFFC8DBF8,
-      this.backgroundValue = 0xFFFFF8F8,
-      this.backgroundDarkValue = 0xFF222222,
+      this.backgroundValue = 0xFFFFC64C,
+      this.backgroundDarkValue = 0xFF212121,
       this.textColorValue = 0xFF001F58,
       this.textColorDarkValue = 0xFFFFFFFF})
       : super._();

@@ -71,8 +71,8 @@ class KgThemeData with _$KgThemeData {
     @Default(0xFFFFD270) int secondaryContainerValue,
     @Default(0xFF5C5C95) int tertiaryValue,
     @Default(0xFFC8DBF8) int tertiaryContainerValue,
-    @Default(0xFFFFF8F8) int backgroundValue,
-    @Default(0xFF222222) int backgroundDarkValue,
+    @Default(0xFFFFC64C) int backgroundValue,
+    @Default(0xFF212121) int backgroundDarkValue,
     @Default(0xFF001F58) int textColorValue,
     @Default(0xFFFFFFFF) int textColorDarkValue,
   }) = _KgThemeData;
@@ -242,4 +242,8 @@ class KgThemeData with _$KgThemeData {
       );
   factory KgThemeData.fromJson(Map<String, dynamic> json) =>
       _$KgThemeDataFromJson(json);
+
+  String toOutputString() {
+    return 'KgThemeData(innerGapValue: $innerGapValue, borderRadiusValue: $borderRadiusValue, paddingValue: $paddingValue, primaryValue: $primaryValue, primaryDarkValue: $primaryDarkValue, primaryContainerValue: $primaryContainerValue, primaryContainerDarkValue: $primaryContainerDarkValue, secondaryValue: $secondaryValue, secondaryDarkValue: $secondaryDarkValue, secondaryContainerValue: $secondaryContainerValue, tertiaryValue: $tertiaryValue, tertiaryContainerValue: $tertiaryContainerValue, backgroundValue: $backgroundValue, backgroundDarkValue: $backgroundDarkValue, textColorValue: $textColorValue, textColorDarkValue: $textColorDarkValue)';
+  }
 }
