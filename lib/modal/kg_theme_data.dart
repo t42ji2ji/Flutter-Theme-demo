@@ -1,9 +1,12 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 part 'kg_theme_data.freezed.dart';
 part 'kg_theme_data.g.dart';
+
+enum GoogleFontTypes { x }
 
 enum ThemeColorTypes {
   primary,
@@ -106,6 +109,11 @@ class KgThemeData with _$KgThemeData {
         offset: const Offset(0, 5),
       );
 
+  final x = Text(
+    'This is Google Fonts',
+    style: GoogleFonts.lato(),
+  );
+
   ThemeData light({FlexScheme? scheme}) {
     return FlexThemeData.light(
       fontFamily: 'Barlow',
@@ -126,99 +134,101 @@ class KgThemeData with _$KgThemeData {
     );
   }
 
-  TextTheme customTextTheme({required bool isDark}) => TextTheme(
-        headline1: TextStyle(
-          letterSpacing: 0.02,
-          fontFamily: 'Barlow',
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
-          color: isDark ? textColorDark : textColor,
-        ),
-        headline2: TextStyle(
-          letterSpacing: 0.02,
-          fontFamily: 'Barlow',
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: isDark ? textColorDark : textColor,
-        ),
-        headline3: TextStyle(
-          letterSpacing: 0.02,
-          fontFamily: 'Barlow',
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-          color: isDark ? textColorDark : textColor,
-        ),
-        headline4: TextStyle(
-          letterSpacing: 0.02,
-          fontFamily: 'Barlow',
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-          color: isDark ? textColorDark : textColor,
-        ),
-        headline5: TextStyle(
-          letterSpacing: 0.02,
-          fontFamily: 'Barlow',
-          fontSize: 14,
-          fontWeight: FontWeight.bold,
-          color: isDark ? textColorDark : textColor,
-        ),
-        headline6: TextStyle(
-          letterSpacing: 0.02,
-          fontFamily: 'Barlow',
-          fontSize: 12,
-          fontWeight: FontWeight.bold,
-          color: isDark ? textColorDark : textColor,
-        ),
-        bodyText1: TextStyle(
-          letterSpacing: 0.02,
-          fontFamily: 'Barlow',
-          fontSize: 14,
-          fontWeight: FontWeight.normal,
-          color: isDark ? textColorDark : textColor,
-        ),
-        bodyText2: TextStyle(
-          letterSpacing: 0.02,
-          fontFamily: 'Barlow',
-          fontSize: 12,
-          fontWeight: FontWeight.normal,
-          color: isDark ? textColorDark : textColor,
-        ),
-        subtitle1: TextStyle(
-          letterSpacing: 0.02,
-          fontFamily: 'Barlow',
-          fontSize: 14,
-          fontWeight: FontWeight.normal,
-          color: isDark ? textColorDark : textColor,
-        ),
-        subtitle2: TextStyle(
-          letterSpacing: 0.02,
-          fontFamily: 'Barlow',
-          fontSize: 12,
-          fontWeight: FontWeight.normal,
-          color: isDark ? textColorDark : textColor,
-        ),
-        button: TextStyle(
-          letterSpacing: 0.02,
-          fontFamily: 'Barlow',
-          fontSize: 14,
-          fontWeight: FontWeight.bold,
-          color: isDark ? textColorDark : textColor,
-        ),
-        caption: TextStyle(
-          letterSpacing: 0.02,
-          fontFamily: 'Barlow',
-          fontSize: 12,
-          fontWeight: FontWeight.normal,
-          color: isDark ? textColorDark : textColor,
-        ),
-        overline: TextStyle(
-          letterSpacing: 0.02,
-          fontFamily: 'Barlow',
-          fontSize: 10,
-          fontWeight: FontWeight.normal,
-          color: isDark ? textColorDark : textColor,
-        ),
-      );
+  TextTheme customTextTheme({required bool isDark}) {
+    return TextTheme(
+      headline1: TextStyle(
+        letterSpacing: 0.02,
+        fontFamily: 'Barlow',
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+        color: isDark ? textColorDark : textColor,
+      ),
+      headline2: TextStyle(
+        letterSpacing: 0.02,
+        fontFamily: 'Barlow',
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+        color: isDark ? textColorDark : textColor,
+      ),
+      headline3: TextStyle(
+        letterSpacing: 0.02,
+        fontFamily: 'Barlow',
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+        color: isDark ? textColorDark : textColor,
+      ),
+      headline4: TextStyle(
+        letterSpacing: 0.02,
+        fontFamily: 'Barlow',
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: isDark ? textColorDark : textColor,
+      ),
+      headline5: TextStyle(
+        letterSpacing: 0.02,
+        fontFamily: 'Barlow',
+        fontSize: 14,
+        fontWeight: FontWeight.bold,
+        color: isDark ? textColorDark : textColor,
+      ),
+      headline6: TextStyle(
+        letterSpacing: 0.02,
+        fontFamily: 'Barlow',
+        fontSize: 12,
+        fontWeight: FontWeight.bold,
+        color: isDark ? textColorDark : textColor,
+      ),
+      bodyText1: TextStyle(
+        letterSpacing: 0.02,
+        fontFamily: 'Barlow',
+        fontSize: 14,
+        fontWeight: FontWeight.normal,
+        color: isDark ? textColorDark : textColor,
+      ),
+      bodyText2: TextStyle(
+        letterSpacing: 0.02,
+        fontFamily: 'Barlow',
+        fontSize: 12,
+        fontWeight: FontWeight.normal,
+        color: isDark ? textColorDark : textColor,
+      ),
+      subtitle1: TextStyle(
+        letterSpacing: 0.02,
+        fontFamily: 'Barlow',
+        fontSize: 14,
+        fontWeight: FontWeight.normal,
+        color: isDark ? textColorDark : textColor,
+      ),
+      subtitle2: TextStyle(
+        letterSpacing: 0.02,
+        fontFamily: 'Barlow',
+        fontSize: 12,
+        fontWeight: FontWeight.normal,
+        color: isDark ? textColorDark : textColor,
+      ),
+      button: TextStyle(
+        letterSpacing: 0.02,
+        fontFamily: 'Barlow',
+        fontSize: 14,
+        fontWeight: FontWeight.bold,
+        color: isDark ? textColorDark : textColor,
+      ),
+      caption: TextStyle(
+        letterSpacing: 0.02,
+        fontFamily: 'Barlow',
+        fontSize: 12,
+        fontWeight: FontWeight.normal,
+        color: isDark ? textColorDark : textColor,
+      ),
+      overline: TextStyle(
+        letterSpacing: 0.02,
+        fontFamily: 'Barlow',
+        fontSize: 10,
+        fontWeight: FontWeight.normal,
+        color: isDark ? textColorDark : textColor,
+      ),
+    );
+  }
 
   FlexSchemeData get customFlexScheme => FlexSchemeData(
         name: 'Midnight blue',
@@ -246,4 +256,61 @@ class KgThemeData with _$KgThemeData {
   String toOutputString() {
     return 'KgThemeData(innerGapValue: $innerGapValue, borderRadiusValue: $borderRadiusValue, paddingValue: $paddingValue, primaryValue: $primaryValue, primaryDarkValue: $primaryDarkValue, primaryContainerValue: $primaryContainerValue, primaryContainerDarkValue: $primaryContainerDarkValue, secondaryValue: $secondaryValue, secondaryDarkValue: $secondaryDarkValue, secondaryContainerValue: $secondaryContainerValue, tertiaryValue: $tertiaryValue, tertiaryContainerValue: $tertiaryContainerValue, backgroundValue: $backgroundValue, backgroundDarkValue: $backgroundDarkValue, textColorValue: $textColorValue, textColorDarkValue: $textColorDarkValue)';
   }
+}
+
+class DefaultTheme {
+  static Map<String, dynamic> poke = {
+    "innerGapValue": 8,
+    "borderRadiusValue": 8,
+    "paddingValue": 10,
+    "primaryValue": 4279347455,
+    "primaryDarkValue": 4280361249,
+    "primaryContainerValue": 4294967295,
+    "primaryContainerDarkValue": 4281216558,
+    "secondaryValue": 4278198104,
+    "secondaryDarkValue": 4281880063,
+    "secondaryContainerValue": 4294955632,
+    "tertiaryValue": 4284243093,
+    "tertiaryContainerValue": 4291353592,
+    "backgroundValue": 4294921292,
+    "backgroundDarkValue": 4291312443,
+    "textColorValue": 4278198104,
+    "textColorDarkValue": 4294967295,
+  };
+  static Map<String, dynamic> blue = {
+    "innerGapValue": 8,
+    "borderRadiusValue": 20,
+    "paddingValue": 10,
+    "primaryValue": 4286552318,
+    "primaryDarkValue": 4281746683,
+    "primaryContainerValue": 4294967295,
+    "primaryContainerDarkValue": 4281216558,
+    "secondaryValue": 4278198104,
+    "secondaryDarkValue": 4283203583,
+    "secondaryContainerValue": 4294955632,
+    "tertiaryValue": 4284243093,
+    "tertiaryContainerValue": 4291353592,
+    "backgroundValue": 4283214847,
+    "backgroundDarkValue": 4280361249,
+    "textColorValue": 4282469983,
+    "textColorDarkValue": 4294967295,
+  };
+  static Map<String, dynamic> green = {
+    "innerGapValue": 8,
+    "borderRadiusValue": 22.41536458333333,
+    "paddingValue": 10,
+    "primaryValue": 4287889191,
+    "primaryDarkValue": 4285726503,
+    "primaryContainerValue": 4294967295,
+    "primaryContainerDarkValue": 4281216558,
+    "secondaryValue": 4282175807,
+    "secondaryDarkValue": 4285071180,
+    "secondaryContainerValue": 4294955632,
+    "tertiaryValue": 4284243093,
+    "tertiaryContainerValue": 4291353592,
+    "backgroundValue": 4290707300,
+    "backgroundDarkValue": 4280361249,
+    "textColorValue": 4278198104,
+    "textColorDarkValue": 4294967295,
+  };
 }

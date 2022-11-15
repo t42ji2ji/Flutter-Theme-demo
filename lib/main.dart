@@ -80,11 +80,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               ),
-              const Positioned(
-                top: 10,
-                right: 10,
-                child: ChangeThemeBtn(),
-              ),
               if (MediaQuery.of(context).size.width > 500)
                 Positioned(
                     top: 100,
@@ -108,6 +103,42 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const ChangeThemeBtn(),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Text('Theme scheme',
+                    style: Theme.of(context).textTheme.headline5),
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                ...[DefaultTheme.blue, DefaultTheme.green, DefaultTheme.poke]
+                    .map(
+                  (data) => GestureDetector(
+                    onTap: () {
+                      ref.read(kgThemeDataStateProvider.notifier).state =
+                          KgThemeData.fromJson(data).copyWith(
+                        isDark: ref.read(kgThemeDataStateProvider).isDark,
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(4),
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: KgThemeData.fromJson(data).background,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ])
+            ],
+          ),
+          const SizedBox(height: 20),
           GestureDetector(
             onTap: () {
               ref.read(kgThemeDataStateProvider.notifier).state = KgThemeData();
