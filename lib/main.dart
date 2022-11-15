@@ -61,16 +61,6 @@ class _MyHomePageState extends State<MyHomePage> {
               : Colors.white,
           body: Stack(
             children: [
-              const Positioned(
-                top: 10,
-                right: 10,
-                child: ChangeThemeBtn(),
-              ),
-              if (MediaQuery.of(context).size.width > 500)
-                Positioned(
-                    top: 100,
-                    left: 10,
-                    child: _buildThemeController(ref, context)),
               SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -90,6 +80,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               ),
+              const Positioned(
+                top: 10,
+                right: 10,
+                child: ChangeThemeBtn(),
+              ),
+              if (MediaQuery.of(context).size.width > 500)
+                Positioned(
+                    top: 100,
+                    left: 10,
+                    child: _buildThemeController(ref, context)),
             ],
           ),
         );
